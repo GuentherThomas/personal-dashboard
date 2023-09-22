@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "3eb4f41a-5534-41b1-a7a4-0f2eecde151e",
+		"name": "Personal Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Google",
+			"item": [
+				{
+					"name": "Calendar",
+					"item": [
+						{
+							"name": "Get Events",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "clientSecret",
+											"value": "{{clientSecret}}",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "{{clientId}}",
+											"type": "string"
+										},
+										{
+											"key": "client_authentication",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "{{host}}",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://oauth2.googleapis.com/token",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "authUrl",
+											"value": "https://accounts.google.com/o/oauth2/v2/auth",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly",
+											"type": "string"
+										},
+										{
+											"key": "tokenName",
+											"value": "Google_Auth_Token",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://www.googleapis.com/calendar/v3/calendars/{{email}}/events",
+									"protocol": "https",
+									"host": [
+										"www",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"calendar",
+										"v3",
+										"calendars",
+										"{{email}}",
+										"events"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
