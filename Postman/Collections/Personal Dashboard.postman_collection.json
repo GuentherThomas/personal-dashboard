@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3eb4f41a-5534-41b1-a7a4-0f2eecde151e",
+		"_postman_id": "8f350459-29d2-4c5e-a4fc-231c8abcdc02",
 		"name": "Personal Dashboard",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -91,6 +91,122 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Weather",
+			"item": [
+				{
+					"name": "Current Weather",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openweathermap.org/data/2.5/weather?lat={{latitude}}&lon={{longitude}}&units=metric&appid={{weatherApiKey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "{{latitude}}"
+								},
+								{
+									"key": "lon",
+									"value": "{{longitude}}"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "appid",
+									"value": "{{weatherApiKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Geocoding",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.openweathermap.org/geo/1.0/direct?q={{city}},{{isoCountryCode}}&appid={{weatherApiKey}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"geo",
+								"1.0",
+								"direct"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "{{city}},{{isoCountryCode}}"
+								},
+								{
+									"key": "appid",
+									"value": "{{weatherApiKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 Hour Forecast",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/forecast?lat={{latitude}}&lon={{longitude}}&units=metric&appid={{weatherApiKey}}",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"forecast"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "{{latitude}}"
+								},
+								{
+									"key": "lon",
+									"value": "{{longitude}}"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "appid",
+									"value": "{{weatherApiKey}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
